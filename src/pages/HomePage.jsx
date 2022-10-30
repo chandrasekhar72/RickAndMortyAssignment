@@ -41,7 +41,6 @@ const HomePage = () => {
             });
 
             setCharacter({ ...character_res.data, results: result })
-            console.log("result", result);
         } catch (error) {
             toast.error("Something went wrong!")
         }
