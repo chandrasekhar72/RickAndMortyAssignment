@@ -1,0 +1,14 @@
+.header {
+    display: flex;
+    align-items: center;
+    box-shadow: $app-box-shadow;
+    height: 60px;
+    background-color: $app-tertiary-color;
+    &-title {
+        margin: 0px;
+        color: white;
+        font-weight: 700;
+        font-family: 'Oswald', sans-serif;
+        letter-spacing: 2px;
+    }
+}

@@ -1,0 +1,32 @@
+.character {
+    margin-bottom: 1rem;
+    &-card {
+        border: none !important;
+        box-shadow: $app-box-shadow;
+        overflow: hidden;
+        background-color: $app-tertiary-color !important;
+    }
+
+    &-image {
+        height: 220px;
+        overflow: hidden;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+}
+
+.status-Alive {
+    color: #55cc44;
+}
+
+.status-Dead {
+    color: #d63d2e;
+}
+
+.status-unknown {
+    color: #afb5bb;
+}

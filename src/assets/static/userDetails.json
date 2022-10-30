@@ -1,0 +1,26 @@
+{
+    "_id": "",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "mobile": "",
+    "date_of_birth": "",
+    "bio": "",
+    "image": "",
+    "cover": "",
+    "gender": "",
+    "address": {
+        "address": "",
+        "country": "",
+        "state": "",
+        "city": "",
+        "pincode": ""
+    },
+    "resume": [],
+    "education": [],
+    "skills": [],
+    "languages": [],
+    "experiences": [],
+    "career": [],
+    "created_at": ""
+}

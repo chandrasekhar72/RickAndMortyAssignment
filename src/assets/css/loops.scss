@@ -1,0 +1,78 @@
+$fw-list : 100, 200, 300, 400, 500, 600, 700, 800, 900;
+
+$directions-list : right, left, top, bottom;
+
+$primary: #0d6efd;
+$secondary: #6c757d;
+$success: #198754;
+$info: #0dcaf0;
+$warning: #ffc107;
+$danger: #dc3545;
+$light: #f8f9fa;
+$dark: #212529;
+$cu_blue: #012970;
+$white: white;
+
+$theme-colors: (
+    "primary": $primary,
+    "secondary": $secondary,
+    "success": $success,
+    "info": $info,
+    "warning": $warning,
+    "danger": $danger,
+    "light": $light,
+    "dark": $dark,
+    "cu_blue":$cu_blue,
+    "white": $white
+);
+
+@each $i in $fw-list {
+    .fw-#{$i}{
+        font-weight: $i !important;
+    }
+}
+
+@for $i from 1 to 1000 {
+    .width-#{$i} {
+        width: $i + px;
+    }
+
+    .height-#{$i} {
+        height: $i + px;
+    }
+
+    .margin-top-#{$i} {
+        margin-top: $i + px;
+    }
+
+    .margin-bottom-#{$i} {
+        margin-bottom: $i + px;
+    }
+
+    .margin-right-#{$i} {
+        margin-right: $i + px;
+    }
+
+    .margin-left-#{$i} {
+        margin-left: $i + px;
+    }
+
+    .rounded-#{$i}px {
+        border-radius: $i + px !important;
+    }
+
+    .rounded-#{$i}rem {
+        border-radius: $i + rem !important;
+        overflow: hidden;
+    }
+}
+
+
+@each $key, $value in $theme-colors {
+    @each $d in $directions-list {
+        .card-#{$key}-#{$d} {
+            border: 0px;
+            border-#{$d}: 4px solid $value !important;
+        }
+    }
+}
