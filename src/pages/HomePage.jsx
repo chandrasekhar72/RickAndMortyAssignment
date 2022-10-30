@@ -11,6 +11,24 @@ const HomePage = () => {
 
     const [episodesList, setEpisodeList] = useState([])
 
+    const getCharacter = async (episodes) => {
+        try {
+            let result = []
+            const character_res = await axios.get(API_SETTINGS.GET_ALL_CHARACTERS);
+            character_res.data.results.forEach((character) => {
+                const episode_ind = episodes.findIndex((epi) => epi.url === character.episode[0])
+                result.push({
+                    ...character,
+                    episode_data: episodes[episode_ind]
+                })
+            });
+
+            setCharacter({ ...character_res.data, results: result })
+        } catch (error) {
+            toast.error("Something went wrong!")
+        }
+    }
+
     useEffect(() => {
         const getEpisodeList = async () => {
             let allEpisodes = []
@@ -28,28 +46,10 @@ const HomePage = () => {
         getEpisodeList()
     }, [])
 
-    const getCharacter = async () => {
-        let result = []
-        try {
-            const character_res = await axios.get(API_SETTINGS.GET_ALL_CHARACTERS);
-            character_res.data.results.forEach((character) => {
-                const episode_ind = episodesList.findIndex((epi) => epi.url === character.episode[0])
-                result.push({
-                    ...character,
-                    episode_data: episodesList[episode_ind]
-                })
-            });
-
-            setCharacter({ ...character_res.data, results: result })
-        } catch (error) {
-            toast.error("Something went wrong!")
-        }
-    }
-
     useEffect(() => {
-        getCharacter()
+        getCharacter(episodesList)
     }, [episodesList])
-
+    
     return (
         <section className="pb-5">
             <div className="container">
