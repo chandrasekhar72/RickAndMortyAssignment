@@ -48,7 +48,7 @@ const HomePage = () => {
 
     useEffect(() => {
         getCharacter(episodesList)
-    }, [episodesList])
+    }, [episodesList.length])
     
     return (
         <section className="pb-5">
